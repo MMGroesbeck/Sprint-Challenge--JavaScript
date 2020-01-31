@@ -27,11 +27,22 @@ class CubeMaker extends CuboidMaker {
     constructor(side){
         super(side, side, side);
     }
-}   //A cube is a cuboid with all sides the same, length = width = height;
+    //A cube is a cuboid with all sides the same, length = width = height;
     //so the more general cuboid volume and surface area formulas still work.
     //CubeMaker takes a side length and passes it to CuboidMaker as length, width, and height.
+    //Equivalent formulas:
+    cubeVolume() {
+        return this.length ** 3;
+    }
+    cubeSurfaceArea() {
+        return 6 * (this.length ** 2);
+    }
+}
 
 const cube1 = new CubeMaker(3);
 
-console.log(cube1.volume());        //27
-console.log(cube1.surfaceArea());   //54
+console.log(cube1.volume());            //27
+console.log(cube1.surfaceArea());       //54
+
+console.log(cube1.cubeVolume());        //27
+console.log(cube1.cubeSurfaceArea());   //54
